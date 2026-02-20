@@ -1,0 +1,101 @@
+/* Global Theme Variables */
+:root {
+  /* Normal Theme */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #1a1a1a;
+  --text-primary: #ffffff;
+  --text-secondary: #888888;
+  --accent-primary: #e74c3c;
+  --accent-secondary: #c0392b;
+  --border-color: #333333;
+}
+
+[data-theme="upside-down"] {
+  /* Upside Down Theme */
+  --bg-primary: #050510;
+  --bg-secondary: #0a0a1a;
+  --text-primary: #a0c4ff;
+  --text-secondary: #5a7fa0;
+  --accent-primary: #3498db;
+  --accent-secondary: #2980b9;
+  --border-color: #1a3050;
+}
+
+/* Global Upside Down Effects */
+[data-theme="upside-down"] body {
+  filter: hue-rotate(180deg) saturate(0.8);
+}
+
+[data-theme="upside-down"] img,
+[data-theme="upside-down"] video {
+  filter: hue-rotate(-180deg) saturate(1.25);
+}
+
+/* Flicker Animation for Upside Down */
+[data-theme="upside-down"]::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 20, 40, 0.3) 100%);
+  pointer-events: none;
+  z-index: 9999;
+  animation: upside-down-flicker 5s infinite;
+}
+
+@keyframes upside-down-flicker {
+  0%, 100% { opacity: 0.3; }
+  10% { opacity: 0.35; }
+  20% { opacity: 0.3; }
+  30% { opacity: 0.4; }
+  40% { opacity: 0.3; }
+  50% { opacity: 0.35; }
+  60% { opacity: 0.3; }
+  70% { opacity: 0.38; }
+  80% { opacity: 0.3; }
+  90% { opacity: 0.33; }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-secondary);
+}
+
+/* Selection */
+::selection {
+  background: var(--accent-primary);
+  color: white;
+}
+
+/* Focus Styles */
+:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Base body styles */
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background 0.5s ease, color 0.5s ease;
+}

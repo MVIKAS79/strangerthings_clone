@@ -1,0 +1,373 @@
+.fanart-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0a0a0a 0%, #1a0a0a 50%, #0a0a0a 100%);
+  padding-top: 80px;
+}
+
+.fanart-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.fanart-container .page-title {
+  font-family: 'ITC Benguiat', serif;
+  font-size: 2.5rem;
+  color: #e74c3c;
+  text-align: center;
+  text-shadow: 0 0 20px rgba(231, 76, 60, 0.5);
+  margin-bottom: 10px;
+}
+
+.fanart-subtitle {
+  text-align: center;
+  color: #888;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.upload-btn {
+  display: block;
+  margin: 0 auto 40px;
+  background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+  border: none;
+  border-radius: 30px;
+  padding: 15px 40px;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(155, 89, 182, 0.4);
+  transition: all 0.3s ease;
+}
+
+.upload-btn:hover {
+  box-shadow: 0 0 30px rgba(155, 89, 182, 0.6);
+}
+
+/* Upload Modal */
+.upload-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.upload-modal {
+  background: #1a1a1a;
+  border: 2px solid #9b59b6;
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.upload-modal h2 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.image-upload-area {
+  width: 100%;
+  height: 200px;
+  border: 2px dashed #444;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.image-upload-area:hover {
+  border-color: #9b59b6;
+}
+
+.image-upload-area img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.upload-placeholder {
+  text-align: center;
+  color: #666;
+}
+
+.upload-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.upload-form input[type="text"] {
+  background: rgba(30, 30, 30, 0.8);
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 15px 20px;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.upload-form input[type="text"]:focus {
+  outline: none;
+  border-color: #9b59b6;
+}
+
+.form-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.cancel-btn, .submit-btn {
+  flex: 1;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cancel-btn {
+  background: transparent;
+  border: 2px solid #666;
+  color: #888;
+}
+
+.cancel-btn:hover {
+  border-color: #e74c3c;
+  color: #e74c3c;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #9b59b6, #8e44ad);
+  border: none;
+  color: white;
+}
+
+.submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 1;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-item-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+  padding: 60px 20px 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-item-overlay {
+  opacity: 1;
+}
+
+.gallery-item-overlay h3 {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.gallery-item-overlay p {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.item-actions {
+  margin-top: 10px;
+}
+
+.like-btn {
+  background: rgba(231, 76, 60, 0.2);
+  border: 1px solid #e74c3c;
+  border-radius: 20px;
+  padding: 8px 15px;
+  color: #e74c3c;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.like-btn:hover {
+  background: #e74c3c;
+  color: white;
+}
+
+.like-btn.large {
+  padding: 12px 25px;
+  font-size: 1rem;
+}
+
+/* Empty State */
+.empty-gallery {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.empty-icon {
+  font-size: 5rem;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.empty-gallery h3 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.empty-gallery p {
+  color: #888;
+}
+
+/* Lightbox */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.lightbox {
+  max-width: 900px;
+  max-height: 90vh;
+  background: #1a1a1a;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.close-lightbox {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 60vh;
+  display: block;
+}
+
+.lightbox-info {
+  padding: 25px;
+}
+
+.lightbox-info h2 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.lightbox-artist {
+  color: #9b59b6;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.lightbox-date {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.lightbox-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.delete-btn {
+  background: rgba(231, 76, 60, 0.2);
+  border: 1px solid #e74c3c;
+  border-radius: 20px;
+  padding: 12px 25px;
+  color: #e74c3c;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  background: #e74c3c;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .fanart-container .page-title {
+    font-size: 1.8rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  .upload-modal {
+    padding: 25px;
+  }
+
+  .lightbox {
+    margin: 10px;
+  }
+
+  .lightbox-actions {
+    flex-direction: column;
+  }
+}

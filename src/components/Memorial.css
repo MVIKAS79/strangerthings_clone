@@ -1,0 +1,419 @@
+.memorial-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0a0a0a 0%, #1a0a0a 50%, #0a0a0a 100%);
+  padding-bottom: 60px;
+}
+
+.memorial-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 100px 20px 40px;
+}
+
+.memorial-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.memorial-header .page-title {
+  font-size: 3rem;
+  color: #f5f5f5;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+  margin-bottom: 15px;
+}
+
+.memorial-header .page-subtitle {
+  color: #888;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+/* Filters */
+.memorial-filters {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  color: #ccc;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.filter-btn.active {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  border-color: #e74c3c;
+  color: white;
+}
+
+/* Candle Counter */
+.candle-counter {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 15px;
+  background: rgba(255, 200, 100, 0.1);
+  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.candle-icon {
+  font-size: 1.5rem;
+  animation: flicker 2s infinite;
+}
+
+.candle-count {
+  color: #f5deb3;
+  font-size: 1rem;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(0.95); }
+}
+
+/* Memorial Grid */
+.memorial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+/* Memorial Card */
+.memorial-card {
+  background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.memorial-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #888, transparent);
+  opacity: 0.5;
+}
+
+.memorial-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 200, 100, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.memorial-card.lit {
+  border-color: rgba(255, 200, 100, 0.5);
+  box-shadow: 0 0 30px rgba(255, 200, 100, 0.2);
+}
+
+.memorial-card.lit::before {
+  background: linear-gradient(90deg, transparent, #ffc864, transparent);
+  opacity: 1;
+}
+
+.memorial-card.spirit {
+  background: linear-gradient(145deg, #1a1a2e, #0d0d1a);
+  border-color: rgba(100, 100, 255, 0.2);
+}
+
+.memorial-flower {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.hero-name {
+  color: #f5f5f5;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.hero-title {
+  color: #888;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.hero-seasons {
+  text-align: center;
+  color: #e74c3c;
+  font-size: 0.8rem;
+  margin-bottom: 15px;
+}
+
+.hero-cause {
+  color: #aaa;
+  font-size: 0.85rem;
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.hero-traits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.trait-tag {
+  padding: 4px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  color: #ccc;
+  font-size: 0.75rem;
+}
+
+.candle-btn {
+  width: 100%;
+  padding: 12px;
+  background: rgba(255, 200, 100, 0.1);
+  border: 1px solid rgba(255, 200, 100, 0.3);
+  border-radius: 25px;
+  color: #ffc864;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.candle-btn:hover {
+  background: rgba(255, 200, 100, 0.2);
+}
+
+.candle-btn.lit {
+  background: linear-gradient(135deg, #ffc864, #ff9500);
+  border-color: #ffc864;
+  color: #1a1a1a;
+  font-weight: bold;
+}
+
+.spirit-badge, .redeemed-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.spirit-badge {
+  background: rgba(100, 100, 255, 0.2);
+  color: #9999ff;
+}
+
+.redeemed-badge {
+  background: rgba(46, 204, 113, 0.2);
+  color: #2ecc71;
+}
+
+/* Modal */
+.memorial-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.memorial-modal {
+  background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+  border: 1px solid rgba(255, 200, 100, 0.3);
+  border-radius: 20px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.modal-header {
+  text-align: center;
+  padding: 30px 30px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-flower {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.modal-header h2 {
+  color: #f5f5f5;
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.modal-title {
+  color: #888;
+  font-size: 1rem;
+}
+
+.modal-content {
+  padding: 25px 30px;
+}
+
+.modal-section {
+  margin-bottom: 25px;
+}
+
+.modal-section h4 {
+  color: #e74c3c;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.hero-quote {
+  color: #f5deb3;
+  font-size: 1.2rem;
+  font-style: italic;
+  padding: 15px;
+  background: rgba(255, 200, 100, 0.1);
+  border-left: 3px solid #ffc864;
+  border-radius: 0 10px 10px 0;
+}
+
+.modal-section p {
+  color: #ccc;
+  line-height: 1.7;
+}
+
+.death-description {
+  color: #e74c3c !important;
+  font-weight: 500;
+}
+
+.death-time {
+  color: #888 !important;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.actor-name {
+  color: #3498db !important;
+  font-weight: 500;
+}
+
+.modal-traits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0 30px 20px;
+}
+
+.modal-traits .trait-tag {
+  padding: 6px 15px;
+  font-size: 0.85rem;
+}
+
+.memorial-modal .candle-btn.large {
+  margin: 0 30px 30px;
+  width: calc(100% - 60px);
+  padding: 15px;
+  font-size: 1rem;
+}
+
+/* Memorial Footer */
+.memorial-footer {
+  margin-top: 60px;
+  text-align: center;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 15px;
+}
+
+.memorial-footer blockquote {
+  color: #ccc;
+  font-size: 1.3rem;
+  font-style: italic;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.memorial-footer cite {
+  display: block;
+  margin-top: 15px;
+  color: #888;
+  font-size: 0.9rem;
+  font-style: normal;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .memorial-header .page-title {
+    font-size: 2rem;
+  }
+
+  .memorial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .memorial-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-btn {
+    text-align: center;
+  }
+
+  .memorial-modal {
+    margin: 10px;
+  }
+}

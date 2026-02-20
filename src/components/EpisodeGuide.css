@@ -1,0 +1,246 @@
+.episode-guide-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0a0a0a 0%, #1a0a0a 50%, #0a0a0a 100%);
+  padding-top: 80px;
+}
+
+.episode-guide-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.episode-guide-container .page-title {
+  font-family: 'ITC Benguiat', serif;
+  font-size: 2.5rem;
+  color: #e74c3c;
+  text-align: center;
+  text-shadow: 0 0 20px rgba(231, 76, 60, 0.5);
+  margin-bottom: 40px;
+}
+
+/* Season Tabs */
+.season-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.season-tab {
+  background: rgba(30, 30, 30, 0.8);
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 15px 25px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.season-tab:hover {
+  border-color: #e74c3c;
+  transform: translateY(-3px);
+}
+
+.season-tab.active {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  border-color: #e74c3c;
+  box-shadow: 0 0 20px rgba(231, 76, 60, 0.5);
+}
+
+.season-year {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.season-tab.active .season-year {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Episode List */
+.episodes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.episode-card {
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid #333;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.episode-card:hover {
+  border-color: #e74c3c;
+  transform: translateX(5px);
+}
+
+.episode-card.expanded {
+  border-color: #e74c3c;
+  box-shadow: 0 0 20px rgba(231, 76, 60, 0.2);
+}
+
+.episode-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+.episode-number {
+  font-family: 'Courier New', monospace;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e74c3c;
+  background: rgba(231, 76, 60, 0.1);
+  padding: 10px 15px;
+  border-radius: 8px;
+  min-width: 60px;
+  text-align: center;
+}
+
+.episode-main {
+  flex: 1;
+}
+
+.episode-title {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.episode-meta {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.episode-meta span {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.rating {
+  font-weight: bold;
+}
+
+.expand-icon {
+  font-size: 1.5rem;
+  color: #e74c3c;
+  width: 30px;
+  text-align: center;
+}
+
+/* Episode Details */
+.episode-details {
+  padding: 0 20px 20px 20px;
+  border-top: 1px solid #333;
+  overflow: hidden;
+}
+
+.episode-summary {
+  color: #ccc;
+  line-height: 1.6;
+  margin: 20px 0;
+  padding-left: 80px;
+}
+
+.episode-credits {
+  display: flex;
+  gap: 30px;
+  padding-left: 80px;
+  flex-wrap: wrap;
+}
+
+.episode-credits span {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* Season Stats */
+.season-stats {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 50px;
+  padding: 30px;
+  background: rgba(20, 20, 20, 0.8);
+  border-radius: 15px;
+  border: 1px solid #333;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #e74c3c;
+  text-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .episode-guide-container .page-title {
+    font-size: 1.8rem;
+  }
+
+  .season-tabs {
+    gap: 8px;
+  }
+
+  .season-tab {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+
+  .episode-header {
+    flex-wrap: wrap;
+    padding: 15px;
+  }
+
+  .episode-number {
+    font-size: 1.2rem;
+    padding: 8px 12px;
+    min-width: 50px;
+  }
+
+  .episode-title {
+    font-size: 1rem;
+  }
+
+  .episode-meta {
+    gap: 10px;
+  }
+
+  .episode-summary,
+  .episode-credits {
+    padding-left: 0;
+  }
+
+  .season-stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .stat-value {
+    font-size: 2rem;
+  }
+}

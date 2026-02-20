@@ -1,0 +1,269 @@
+/* Character Relationships Page */
+.relationships-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+  padding: 100px 20px 40px;
+}
+
+.relationships-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.relationships-container .page-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--accent-primary);
+  font-family: 'Courier New', monospace;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+}
+
+.page-subtitle {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+}
+
+/* Filter Controls */
+.relationship-filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.relationship-filters .filter-btn {
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.relationship-filters .filter-btn:hover {
+  border-color: var(--filter-color);
+  color: var(--filter-color);
+}
+
+.relationship-filters .filter-btn.active {
+  background: var(--filter-color);
+  border-color: var(--filter-color);
+  color: white;
+}
+
+/* Relationship Web */
+.relationship-web {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/10;
+  max-height: 500px;
+  background: 
+    radial-gradient(ellipse at center, rgba(231, 76, 60, 0.05) 0%, transparent 70%),
+    rgba(10, 10, 20, 0.8);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.web-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.web-svg text {
+  pointer-events: none;
+  user-select: none;
+}
+
+.web-svg line {
+  transition: stroke-width 0.3s ease, stroke-opacity 0.3s ease;
+}
+
+/* Relationship Tooltip */
+.relationship-tooltip {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(20, 20, 35, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: white;
+  pointer-events: none;
+}
+
+/* Character Details Panel */
+.character-details-panel {
+  background: linear-gradient(135deg, #1a1a2e, #0d0d1a);
+  border: 1px solid var(--accent-primary);
+  border-radius: 16px;
+  padding: 25px;
+  max-width: 500px;
+  margin: 0 auto 30px;
+}
+
+.details-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.character-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.details-header h2 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 5px;
+}
+
+.character-group {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.character-relationships-list h3 {
+  font-size: 1rem;
+  color: var(--accent-primary);
+  margin-bottom: 15px;
+}
+
+.relationship-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.rel-badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+}
+
+.rel-character {
+  color: var(--text-primary);
+  font-weight: 500;
+  flex: 1;
+}
+
+.rel-label {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.close-details-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.close-details-btn:hover {
+  background: var(--accent-primary);
+  color: white;
+}
+
+/* Relationship Legend */
+.relationship-legend {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.relationship-legend h4 {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.relationship-legend .legend-items {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.relationship-legend .legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.legend-line {
+  width: 20px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+/* Upside Down Theme */
+[data-theme="upside-down"] .relationship-web {
+  background: 
+    radial-gradient(ellipse at center, rgba(52, 152, 219, 0.1) 0%, transparent 70%),
+    rgba(5, 5, 16, 0.9);
+  border-color: var(--accent-primary);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .relationships-page {
+    padding: 80px 15px 30px;
+  }
+
+  .relationships-container .page-title {
+    font-size: 1.8rem;
+  }
+
+  .relationship-web {
+    aspect-ratio: 1/1;
+  }
+
+  .relationship-filters .filter-btn {
+    padding: 8px 14px;
+    font-size: 0.8rem;
+  }
+
+  .relationship-item {
+    flex-wrap: wrap;
+  }
+
+  .rel-label {
+    width: 100%;
+    margin-top: 5px;
+    font-size: 0.8rem;
+  }
+}

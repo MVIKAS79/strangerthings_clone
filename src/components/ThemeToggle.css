@@ -1,0 +1,87 @@
+.theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #e74c3c;
+  border-radius: 30px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  border-color: #ff6b6b;
+  box-shadow: 0 0 20px rgba(231, 76, 60, 0.5);
+}
+
+.theme-toggle.upside-down {
+  border-color: #3498db;
+  background: rgba(0, 20, 40, 0.9);
+}
+
+.theme-toggle.upside-down:hover {
+  border-color: #5dade2;
+  box-shadow: 0 0 20px rgba(52, 152, 219, 0.5);
+}
+
+.toggle-track {
+  position: relative;
+  width: 56px;
+  height: 28px;
+  background: linear-gradient(135deg, #2c3e50, #1a1a2e);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px;
+}
+
+.toggle-thumb {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  border-radius: 50%;
+  left: 2px;
+  box-shadow: 0 2px 10px rgba(231, 76, 60, 0.5);
+}
+
+.theme-toggle.upside-down .toggle-thumb {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  box-shadow: 0 2px 10px rgba(52, 152, 219, 0.5);
+}
+
+.toggle-icon {
+  font-size: 14px;
+  z-index: 1;
+}
+
+.toggle-label {
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  font-weight: bold;
+  color: #e74c3c;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.theme-toggle.upside-down .toggle-label {
+  color: #3498db;
+}
+
+@media (max-width: 768px) {
+  .theme-toggle {
+    bottom: 10px;
+    right: 10px;
+    padding: 8px 12px;
+  }
+
+  .toggle-label {
+    display: none;
+  }
+}

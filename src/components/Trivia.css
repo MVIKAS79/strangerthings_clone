@@ -1,0 +1,480 @@
+.trivia-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0a0a0a 0%, #1a0a0a 50%, #0a0a0a 100%);
+  padding-top: 80px;
+}
+
+.trivia-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Menu */
+.trivia-menu {
+  text-align: center;
+  width: 100%;
+}
+
+.trivia-title {
+  font-family: 'ITC Benguiat', serif;
+  font-size: 2.5rem;
+  color: #e74c3c;
+  text-shadow: 0 0 20px rgba(231, 76, 60, 0.5);
+  margin-bottom: 15px;
+}
+
+.trivia-description {
+  color: #aaa;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.high-score {
+  display: inline-flex;
+  flex-direction: column;
+  background: rgba(241, 196, 15, 0.1);
+  border: 2px solid #f1c40f;
+  border-radius: 15px;
+  padding: 20px 40px;
+  margin-bottom: 30px;
+}
+
+.high-score-label {
+  color: #f1c40f;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.high-score-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #f1c40f;
+  text-shadow: 0 0 10px rgba(241, 196, 15, 0.5);
+}
+
+.difficulty-selector {
+  margin-bottom: 30px;
+}
+
+.difficulty-selector h3 {
+  color: #888;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.difficulty-options {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.difficulty-btn {
+  background: rgba(30, 30, 30, 0.8);
+  border: 2px solid #444;
+  border-radius: 10px;
+  padding: 12px 20px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+}
+
+.difficulty-btn:hover {
+  border-color: #e74c3c;
+}
+
+.difficulty-btn.active {
+  border-color: #e74c3c;
+  background: rgba(231, 76, 60, 0.2);
+}
+
+.start-game-btn {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  border: none;
+  border-radius: 30px;
+  padding: 18px 50px;
+  color: white;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0 0 30px rgba(231, 76, 60, 0.4);
+}
+
+/* Game Header */
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.game-stat {
+  text-align: center;
+}
+
+.game-stat .stat-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #888;
+  text-transform: uppercase;
+}
+
+.game-stat .stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.game-stat .stat-value.streak {
+  color: #f39c12;
+}
+
+.game-timer {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: conic-gradient(#e74c3c var(--progress), #333 var(--progress));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.game-timer::before {
+  content: '';
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  background: #0a0a0a;
+  border-radius: 50%;
+}
+
+.game-timer span {
+  position: relative;
+  z-index: 1;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.game-timer span.critical {
+  color: #e74c3c;
+  animation: pulse 0.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* Progress */
+.game-progress {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.progress-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.progress-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #333;
+  transition: all 0.3s ease;
+}
+
+.progress-dot.done {
+  background: #2ecc71;
+}
+
+.progress-dot.current {
+  background: #e74c3c;
+  box-shadow: 0 0 10px #e74c3c;
+}
+
+.progress-label {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Question */
+.trivia-game {
+  width: 100%;
+}
+
+.trivia-question {
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid #333;
+  border-radius: 20px;
+  padding: 30px;
+  position: relative;
+}
+
+.difficulty-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.difficulty-badge.easy {
+  background: rgba(46, 204, 113, 0.2);
+  color: #2ecc71;
+}
+
+.difficulty-badge.medium {
+  background: rgba(241, 196, 15, 0.2);
+  color: #f1c40f;
+}
+
+.difficulty-badge.hard {
+  background: rgba(231, 76, 60, 0.2);
+  color: #e74c3c;
+}
+
+.trivia-question .question-text {
+  font-size: 1.3rem;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 30px;
+  line-height: 1.4;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.option-btn {
+  background: rgba(30, 30, 30, 0.8);
+  border: 2px solid #444;
+  border-radius: 12px;
+  padding: 15px 20px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.option-btn:hover:not(:disabled) {
+  border-color: #e74c3c;
+  background: rgba(231, 76, 60, 0.1);
+}
+
+.option-btn.correct {
+  border-color: #2ecc71;
+  background: rgba(46, 204, 113, 0.2);
+}
+
+.option-btn.wrong {
+  border-color: #e74c3c;
+  background: rgba(231, 76, 60, 0.2);
+}
+
+.option-letter {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.option-text {
+  flex: 1;
+  font-size: 0.95rem;
+}
+
+.answer-feedback {
+  text-align: center;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.answer-feedback.correct {
+  background: rgba(46, 204, 113, 0.2);
+  color: #2ecc71;
+}
+
+.answer-feedback.wrong {
+  background: rgba(231, 76, 60, 0.2);
+  color: #e74c3c;
+}
+
+/* Results */
+.trivia-results {
+  text-align: center;
+  width: 100%;
+}
+
+.results-title {
+  font-size: 1.5rem;
+  color: #888;
+  margin-bottom: 30px;
+}
+
+.grade-display {
+  margin-bottom: 30px;
+}
+
+.grade {
+  display: block;
+  font-size: 6rem;
+  font-weight: bold;
+  color: var(--grade-color);
+  text-shadow: 0 0 30px var(--grade-color);
+  line-height: 1;
+}
+
+.grade-text {
+  font-size: 1.3rem;
+  color: var(--grade-color);
+}
+
+.final-score {
+  background: rgba(20, 20, 20, 0.9);
+  border: 2px solid #e74c3c;
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.final-score-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #888;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.final-score-value {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #e74c3c;
+  text-shadow: 0 0 20px rgba(231, 76, 60, 0.5);
+}
+
+.new-record {
+  display: block;
+  font-size: 1.2rem;
+  color: #f1c40f;
+  margin-top: 10px;
+  animation: bounce 0.5s infinite alternate;
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-5px); }
+}
+
+.results-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.result-stat {
+  text-align: center;
+}
+
+.result-stat-value {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.result-stat-label {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.results-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.play-again-btn, .menu-btn {
+  border: none;
+  border-radius: 25px;
+  padding: 15px 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.play-again-btn {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+}
+
+.menu-btn {
+  background: rgba(30, 30, 30, 0.8);
+  border: 2px solid #666;
+  color: #fff;
+}
+
+.menu-btn:hover {
+  border-color: #e74c3c;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .trivia-title {
+    font-size: 1.8rem;
+  }
+
+  .options-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trivia-question .question-text {
+    font-size: 1.1rem;
+  }
+
+  .grade {
+    font-size: 4rem;
+  }
+
+  .final-score-value {
+    font-size: 3rem;
+  }
+
+  .results-actions {
+    flex-direction: column;
+  }
+
+  .play-again-btn, .menu-btn {
+    width: 100%;
+  }
+}
